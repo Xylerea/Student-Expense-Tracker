@@ -8,8 +8,13 @@
   <script src="js/app.js" defer></script>
 </head>
 <body>
+  <nav class="menu-bar" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Pocket Notes home">Pocket Notes<span>Student Expense Tracker</span></a>
+    <div class="menu-links"><a href="#tracker">Tracker</a><a href="#how-it-works">How it works</a><a href="#money-tips">Money tips</a><a href="#about">About</a></div>
+  </nav>
   <main>
-    <header><p class="eyebrow">STUDENT EXPENSE TRACKER</p><h1>Know where your money goes.</h1><p>Keep track of everyday spending, one expense at a time.</p></header>
+    <header id="home" class="hero"><p class="eyebrow">SMALL HABITS. SMARTER SPENDING.</p><h1>A little more clarity.<br>A little less money stress.</h1><p class="tagline">Your allowance, your plans, your pocket notes.</p><p>From canteen lunches to school supplies, give every expense a place. Pocket Notes helps you see what you spend, plan a monthly budget, and make room for what matters to you.</p><a class="start-link" href="#tracker">Start tracking <span aria-hidden="true">→</span></a></header>
+    <section id="tracker" class="tracker-intro"><p class="eyebrow">YOUR MONTH AT A GLANCE</p><h2>Let’s check your spending</h2><p>Choose a month, set your budget, and add your everyday expenses below.</p></section>
     <section class="toolbar" aria-label="Monthly settings">
       <label>View month<input id="month" type="month" required></label>
       <form id="budget-form"><label>Monthly budget (₱)<input id="budget" type="number" min="0" max="100000000" step="0.01" required placeholder="e.g. 5000"></label><button>Save budget</button></form>
@@ -34,6 +39,27 @@
         <h3>Spending by category</h3><ul id="breakdown"></ul><p class="hint">Summary and category totals include all expenses in the selected month.</p>
       </section>
     </div>
+    <section id="how-it-works" class="content-section">
+      <p class="eyebrow">GET STARTED</p><h2>Three simple steps to build a habit</h2>
+      <div class="info-grid">
+        <article class="info-card"><span class="step-number">01</span><h3>Plan your month</h3><p>Set a budget based on the allowance or money you have available. You can save a different budget for each month.</p></article>
+        <article class="info-card"><span class="step-number">02</span><h3>Note the little things</h3><p>Add your expense, amount, category, and date. Recording even small purchases helps you see the whole picture.</p></article>
+        <article class="info-card"><span class="step-number">03</span><h3>Review and adjust</h3><p>Check your remaining budget and category totals. Use the month selector to review earlier spending and plan your next month.</p></article>
+      </div>
+    </section>
+    <section id="money-tips" class="content-section">
+      <p class="eyebrow">A LITTLE EVERYDAY GUIDANCE</p><h2>Make your allowance work for you</h2>
+      <div class="info-grid tips-grid">
+        <article class="info-card"><h3>Start with essentials</h3><p>Leave room for transport, meals, and school materials before planning optional purchases.</p></article>
+        <article class="info-card"><h3>Check in once a week</h3><p>A quick review can help you notice repeated spending, such as snacks or extra trips, while there is still time to adjust.</p></article>
+        <article class="info-card"><h3>Keep your budget realistic</h3><p>Use what you actually spend as a starting point. If a month goes over budget, review the entries and make a practical plan for the next one.</p></article>
+      </div>
+    </section>
+    <section id="about" class="content-section about-section">
+      <div><p class="eyebrow">ABOUT POCKET NOTES</p><h2>A simple tracker for student life</h2><p>Pocket Notes is a practice project designed to make everyday expense tracking easy to understand. It tracks spending in Philippine pesos across Food, Transport, School, Personal, and Other categories.</p><p>You enter expenses yourself, so your totals reflect the entries you record. The category filter changes the list; the monthly summary always includes every expense in that month.</p></div>
+      <div class="storage-note"><h3>Where are my entries saved?</h3><p>Your expenses and budgets are saved in this browser on this device. Refreshing keeps them available, but clearing browser data removes them. There is no account, cloud sync, or automatic backup.</p><h3>Made a mistake?</h3><p>Delete the incorrect entry and add it again with the correct details. You’ll be asked to confirm before an expense is deleted.</p></div>
+    </section>
+    <footer><span class="footer-brand">Pocket Notes</span><p>Your allowance, your plans, your pocket notes.</p><a href="#home">Back to top ↑</a></footer>
   </main>
 </body>
 </html>
