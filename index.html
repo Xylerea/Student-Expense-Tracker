@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Expense Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">STUDENT EXPENSE TRACKER</p><h1>Know where your money goes.</h1><p>Keep track of everyday spending, one expense at a time.</p></header>
+    <section class="toolbar" aria-label="Monthly settings">
+      <label>View month<input id="month" type="month" required></label>
+      <form id="budget-form"><label>Monthly budget (₱)<input id="budget" type="number" min="0" max="100000000" step="0.01" required placeholder="e.g. 5000"></label><button>Save budget</button></form>
+    </section>
+    <section class="summary" aria-label="Monthly summary">
+      <article><span>Total spent</span><strong id="total">₱0.00</strong></article>
+      <article><span>Monthly budget</span><strong id="budget-total">Not set</strong></article>
+      <article><span id="remaining-label">Remaining budget</span><strong id="remaining">—</strong></article>
+    </section>
+    <p id="message" role="status" aria-live="polite"></p>
+    <div class="layout">
+      <section class="panel"><h2>Add an expense</h2><form id="expense-form">
+        <label>Description<input id="description" maxlength="80" required placeholder="e.g. Lunch at the canteen"></label>
+        <label>Amount (₱)<input id="amount" type="number" min="0.01" max="100000000" step="0.01" required placeholder="0.00"></label>
+        <label>Category<select id="category"><option>Food</option><option>Transport</option><option>School</option><option>Personal</option><option>Other</option></select></label>
+        <label>Date<input id="date" type="date" required></label>
+        <button>Add expense</button>
+      </form><p class="hint">Your entries are saved in this browser. Currency: Philippine pesos.</p></section>
+      <section class="panel expenses"><div class="section-heading"><h2>Your expenses</h2><label>Filter category<select id="filter"><option value="">All categories</option><option>Food</option><option>Transport</option><option>School</option><option>Personal</option><option>Other</option></select></label></div>
+        <p id="empty">No expenses for this month. Add your first expense to get started.</p>
+        <div class="table-wrap"><table id="table" hidden><thead><tr><th scope="col">Expense</th><th scope="col">Date</th><th scope="col">Amount</th><th scope="col">Action</th></tr></thead><tbody id="rows"></tbody></table></div>
+        <h3>Spending by category</h3><ul id="breakdown"></ul><p class="hint">Summary and category totals include all expenses in the selected month.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
